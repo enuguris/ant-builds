@@ -13,10 +13,10 @@
 	</target>
     <target name="output-status" depends="test">
     <loadfile property="cbs_quick_build_ci_status" srcfile="/root/jenkins/ci-status/logs/cbs/quick_build.txt">
-        <echo message="CBS QUICK BUILD STATUS: ${cbs_quick_build_ci_status}"/>
+        <echo message="CBS QUICK BUILD STATUS: ">${cbs_quick_build_ci_status}"</echo>
     </loadfile>
     <loadfile property="cbs_publish_ci_status" srcfile="/root/jenkins/ci-status/logs/cbs/Publish_ci.txt">
-        <echo message="CBS PUBLISH BUILD STATUS: ${cbs_publish_ci_status}"/>
+        <echo message="CBS PUBLISH BUILD STATUS: ">${cbs_publish_ci_status}"</echo>
     </loadfile>
     </target>
 </project>
