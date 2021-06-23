@@ -11,7 +11,7 @@
 		</condition>
 	</fail>
 	</target>
-    <target name="output-status">
+    <target name="output-status" depends="test">
     <loadfile property="cbs_quick_build_ci_status" srcfile="/root/jenkins/ci-status/logs/cbs/quick_build.txt">
         <echo> CBS QUICK BUILD STATUS: ${cbs_quick_build_ci_status}</echo>
     </loadfile>
