@@ -11,6 +11,12 @@
 		</condition>
 	</fail>
 	</target>
+    <target name="CBS_PUBLISH_CI_BUILD_STATUS">
+    <fail message="CBS PUBLISH CI BUILD FAILED">
+       <condition>
+	  <resourcecontains resource="/root/jenkins/ci-status/logs/cbs/Publish_ci.txt" substring="FAILED" />
+       </condition> 
+    </fail>
     <target name="CBS_QUICK_BUILD_STATUS">
     <fail message="CBS QUICK BUILD FAILED">
        <condition>
@@ -18,7 +24,7 @@
        </condition> 
     </fail>
     </target> 
-    <target name="output-status" depends="CBS_QUICK_BUILD_STATUS">
+    <target name="output-status" depends="CBS_QUICK_BUILD_STATUS", "CBS_PUBLISH_CI_BUILD_STATUS">
     <loadfile property="cbs_quick_build_ci_status" srcfile="/root/jenkins/ci-status/logs/cbs/quick_build.txt"/>
     <echo> CBS QUICK BUILD STATUS: ${cbs_quick_build_ci_status}</echo>
     <loadfile property="cbs_publish_ci_status" srcfile="/root/jenkins/ci-status/logs/cbs/Publish_ci.txt"/>
