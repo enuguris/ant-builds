@@ -17,6 +17,7 @@
 	  <resourcecontains resource="/root/jenkins/ci-status/logs/cbs/Publish_ci.txt" substring="FAILED" />
        </condition> 
     </fail>
+    </target>
     <target name="CBS_QUICK_BUILD_STATUS">
     <fail message="CBS QUICK BUILD FAILED">
        <condition>
