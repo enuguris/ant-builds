@@ -16,6 +16,7 @@
     <echo> CBS QUICK BUILD STATUS: ${cbs_quick_build_ci_status}</echo>
     <loadfile property="cbs_publish_ci_status" srcfile="/root/jenkins/ci-status/logs/cbs/Publish_ci.txt"/>
     <echo>CBS PUBLISH BUILD STATUS: ${cbs_publish_ci_status}</echo>
+    </target>
     <target name="CBS_PUBLISH_CI_BUILD_STATUS">
     <fail message="CBS PUBLISH CI BUILD FAILED">
        <condition>
